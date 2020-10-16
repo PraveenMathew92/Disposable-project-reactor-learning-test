@@ -3,8 +3,13 @@ package disposable
 import reactor.core.Disposable
 
 class BasicDisposable : Disposable {
-    override fun dispose() {
+    private var disposed = false
 
+    override fun dispose() {
+        disposed = true
     }
 
+    override fun isDisposed(): Boolean {
+        return disposed
+    }
 }
