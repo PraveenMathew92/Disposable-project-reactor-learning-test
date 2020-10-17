@@ -13,8 +13,8 @@ repositories {
 
 dependencies {
     implementation 'io.projectreactor:reactor-core:3.3.10.RELEASE'
-    testImplementation 'junit:junit:4.12'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    testImplementation 'junit:junit:4.12'
 }
 
 compileKotlin {

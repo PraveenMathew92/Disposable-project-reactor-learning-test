@@ -4,9 +4,12 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 import reactor.core.Disposable
 
-public class DisposableTest {
+interface DisposableTest <T: Disposable> {
+
+    fun createDisposable(): T
+
     @Test
-    internal fun `should return false on calling isDisposed on new Disposable`() {
+    fun `should return false on calling isDisposed on new Disposable`() {
         val disposable: Disposable = BasicDisposable()
         assertFalse(disposable.isDisposed())
     }
