@@ -9,7 +9,8 @@ class SwapDisposable: Disposable.Swap {
     private var disposable: Disposable? = null
 
     override fun update(next: Disposable?): Boolean {
-        TODO("Not yet implemented")
+        disposable = next
+        return true
     }
 
     override fun replace(next: Disposable?): Boolean {

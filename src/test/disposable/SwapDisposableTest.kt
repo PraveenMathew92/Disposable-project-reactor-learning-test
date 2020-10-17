@@ -25,4 +25,14 @@ class SwapDisposableTest : DisposableTest<SwapDisposable> {
         assertEquals(disposable, swapDisposable.get())
         assertTrue(response)
     }
+
+    @Test
+    fun `should get disposable added by update`() {
+        val disposable = BasicDisposable()
+        val swapDisposable = SwapDisposable()
+        val response = swapDisposable.update(disposable)
+
+        assertEquals(disposable, swapDisposable.get())
+        assertTrue(response)
+    }
 }
