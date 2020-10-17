@@ -24,7 +24,7 @@ class SwapDisposable: Disposable.Swap {
     }
 
     override fun dispose() {
-        TODO("Not yet implemented")
+        disposable?.dispose()
     }
 
 }

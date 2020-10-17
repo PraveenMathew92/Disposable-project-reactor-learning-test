@@ -46,4 +46,15 @@ class SwapDisposableTest : DisposableTest<SwapDisposable> {
         assertTrue(disposable.isDisposed)
         assertFalse(anotherDisposable.isDisposed)
     }
+
+    @Test
+    fun `should dispose the next disposable`() {
+        val disposable = BasicDisposable()
+        val swapDisposable = SwapDisposable()
+        swapDisposable.replace(disposable)
+
+        swapDisposable.dispose()
+
+        assertTrue(disposable.isDisposed)
+    }
 }
