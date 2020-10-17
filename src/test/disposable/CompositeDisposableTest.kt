@@ -1,5 +1,6 @@
 import disposable.BasicDisposable
 import disposable.CompositeDisposable
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import reactor.core.Disposable
@@ -29,6 +30,22 @@ class CompositeDisposableTest : DisposableTest<CompositeDisposable> {
         compositeDisposable.dispose()
 
         assertTrue(disposable.isDisposed)
+        assertTrue(anotherDisposable.isDisposed)
+    }
+
+    @Test
+    fun `should not dispose the disposable that has been removed from the composite disposable`() {
+        val disposable: Disposable = BasicDisposable()
+        val anotherDisposable: Disposable = BasicDisposable()
+        val compositeDisposable = CompositeDisposable()
+
+        compositeDisposable.add(disposable)
+        compositeDisposable.add(anotherDisposable)
+        val response = compositeDisposable.remove(disposable)
+        compositeDisposable.dispose()
+
+        assertTrue(response)
+        assertFalse(disposable.isDisposed)
         assertTrue(anotherDisposable.isDisposed)
     }
 }

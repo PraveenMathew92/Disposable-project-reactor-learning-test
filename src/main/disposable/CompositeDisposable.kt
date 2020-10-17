@@ -15,7 +15,7 @@ class CompositeDisposable : Disposable.Composite {
     }
 
     override fun remove(d: Disposable): Boolean {
-        TODO("Not yet implemented")
+        return disposables.remove(d)
     }
 
     override fun size(): Int {
