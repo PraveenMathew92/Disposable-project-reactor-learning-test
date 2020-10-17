@@ -11,4 +11,6 @@ https://projectreactor.io/docs/core/snapshot/api/reactor/core/Disposable.html
 
 - Composite Disposable: A disposable container that holds a bunch of disposables. Disposing the container would dispose all the diposable it contains.
 
-- Swap Disposable: A disposable container that holds the next disposable to be disposed 
+- Swap Disposable: A disposable container that holds the next disposable to be disposed
+
+Disposable Factory: https://projectreactor.io/docs/core/snapshot/api/reactor/core/Disposables.html
