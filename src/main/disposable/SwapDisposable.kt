@@ -9,6 +9,7 @@ class SwapDisposable: Disposable.Swap {
     private var disposable: Disposable? = null
 
     override fun update(next: Disposable?): Boolean {
+        disposable?.dispose()
         disposable = next
         return true
     }
